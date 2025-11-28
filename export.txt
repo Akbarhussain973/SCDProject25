@@ -1,0 +1,7 @@
+===== Vault Export =====
+Export Date: 2025-11-28T15:42:04.929Z
+Total Records: 2
+Output File: export.txt
+
+ID: 6929c2a8636d8ac757b56ffa | Name: Akbar | Value: 10 | Created: 2025-11-28T15:41:28.855Z
+ID: 6929c2bb636d8ac757b56ffd | Name: Hashir | Value: 20 | Created: 2025-11-28T15:41:47.529Z
