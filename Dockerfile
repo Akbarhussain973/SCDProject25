@@ -1,3 +1,4 @@
+
 # Use official Node.js LTS version
 FROM node:18-alpine
 
@@ -17,4 +18,5 @@ COPY . .
 EXPOSE 3000
 
 # Run the app in production
-CMD ["node", "main.js"]
+CMD ["node", "server.js"]
+
