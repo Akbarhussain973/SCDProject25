@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+
+  mongo:
+    image: mongo:latest
+    container_name: scd25-mongo
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "27018:27017"   # host port changed to avoid conflicts
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - scd25-network
+
+  backend:
+    build:
+      context: .   # path to backend Dockerfile
+    image: scd25-backend:v1
+    container_name: scd25-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3001:3000"   # host port changed to avoid conflicts
+    depends_on:
+      - mongo
+    networks:
+      - scd25-network
+
+volumes:
+  mongo_data:
+
+networks:
+  scd25-network:
+    driver: bridge
+
